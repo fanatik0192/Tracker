@@ -4142,12 +4142,8 @@
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
 
-        // ID unique pour cet utilisateur (genere une fois, stocke localement)
-        let odaUserId = localStorage.getItem('olympus_tracker_user_id');
-        if (!odaUserId) {
-            odaUserId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-            localStorage.setItem('olympus_tracker_user_id', odaUserId);
-        }
+        // ID fixe pour Antoine (sync automatique sur tous les appareils)
+        const odaUserId = 'user_1767041205687_0p417kb6c';
         console.log('🏛️ Olympus Tracker - User ID:', odaUserId);
 
         // Flag pour eviter les boucles de sync
